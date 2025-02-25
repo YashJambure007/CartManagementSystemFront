@@ -32,7 +32,7 @@ const Cart = ({ cartAllProduct, setCartAllProduct }) => {
         {cartAllProduct?.map((product) => {
           return (
             <div
-              className="col-8 border rounded d-flex gap-3"
+              className="col-8 border rounded flex gap-3 p-2"
               key={product?.id}
             >
               <div className="p-1">
@@ -42,19 +42,19 @@ const Cart = ({ cartAllProduct, setCartAllProduct }) => {
                   className="cart-product-size"
                 />
               </div>
-              <div className="p-1 d-flex gap-3">
+              <div className="p-1 flex gap-3">
                 <div>
-                  <h3 className="text-hiding m-0">
+                  <h3 className="text-hiding m-0 font-semibold">
                     {product?.model?.toUpperCase()}
                   </h3>
-                  <p className="m-0 fs-5">
+                  <p className="m-0 text-[2rem]">
                     <span className="font-bold ">₹</span> {product?.price}
                   </p>
                   <p className="m-0 font-size-12 font-bold">{product?.space}</p>
                   <p className="m-0 font-size-12 font-bold">
                     {product?.camera}
                   </p>
-                  <div className="d-flex gap-3 mt-1">
+                  <div className="flex gap-3 mt-1">
                     <p
                       className="m-0 border p-0 px-2 py-1 rounded cursor-pointer"
                       onClick={() => handleDecrement(product?.id)}
@@ -71,11 +71,11 @@ const Cart = ({ cartAllProduct, setCartAllProduct }) => {
                   </div>
                 </div>
 
-                <div className="d-flex flex-col relative">
-                  <div className="d-flex mt-2">
+                <div className="flex flex-col relative">
+                  <div className="flex mt-2 ms-3">
                     <p>{product?.description}</p>
                     <p onClick={() => handleDeleteItem(product?.id)}>
-                      <i className="fa-solid fa-trash text-danger pointer text-[1.2rem] mt-1"></i>
+                      <i className="fa-solid fa-trash text-danger pointer text-[1.3rem] mt-1 ms-3"></i>
                     </p>
                 
                   </div>

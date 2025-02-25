@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
-import {  } from '@fortawesome/fontawesome-svg-core'
 
 
 // eslint-disable-next-line react/prop-types
@@ -8,26 +7,26 @@ const Navbar = ({ cartAllProduct }) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-12 bg-primary d-flex justify-content-between px-5">
-          <ul className="d-flex gap-5 align-items-center m-0 p-0 py-3 ">
+        <div className="col-12 bg-blue-500 flex justify-between px-[3rem]">
+          <ul className="flex gap-[3rem] text-white font-bold align-center m-0 py-[1rem] ">
             <NavLink
               to="/"
-              className="list-unstyled text-light p-0 pointer text-decoration-none"
+              className="list-none p-0 cursor-pointer decoration-0"
             >
               HOME
             </NavLink>
-            <li className="list-unstyled text-light p-0 pointer">ABOUT</li>
-            <li className="list-unstyled text-light p-0 pointer">CONTACT</li>
+            <li className="list-none font-bold p-0 cursor-pointer">ABOUT</li>
+            <li className="list-none font-bold p-0 cursor-pointer">CONTACT</li>
           </ul>
-          <ul className="m-0 p-0 py-3 position-relative">
+          <ul className="m-0 p-0 py-[1rem] relative">
             <NavLink
               to="/cart"
-              className="list-unstyled text-light p-0 pointer"
+              className="list-none text-white p-0 cursor-pointer relative"
             >
-              <i className="fa-solid fa-cart-shopping fs-3"></i>
+               <i className="fa-solid fa-cart-shopping text-2xl absolute top-3 right-4"></i>
             </NavLink>
             <span
-              className="text-decoration-none count rounded-pill text-dark position-absolute top-0 roght"
+              className="decoration-0 count rounded-[50%] text-black absolute"
               style={{backgroundColor: "orange", right:'-45%' }}
             >
               {cartAllProduct?.length}
