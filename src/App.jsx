@@ -5,35 +5,35 @@ import "./App.css";
 import Cart from "./Component/Cart";
 import { Route, Routes } from "react-router-dom";
 import productList from "./Component/data";
+import Success from "./Component/Success";
 
 const App = () => {
   const [productId, setProudctId] = useState("");
   const [cartAllProduct, setCartAllProduct] = useState([]);
 
   useEffect(() => {
-
     const filteredObject = productList.filter(
       (product) => product.id == productId
     );
     setCartAllProduct([...cartAllProduct, ...filteredObject]);
-
   }, [productId]);
 
   return (
     <>
-      
-        <Navbar cartAllProduct={cartAllProduct}/>
-        <Routes>
-          <Route
-            path="/"
-            element={<Home setProductId={setProudctId} />}
-          ></Route>
-          <Route
-            path="/cart"
-            element={<Cart cartAllProduct={cartAllProduct} setCartAllProduct={setCartAllProduct}/>}
-          ></Route>
-        </Routes>
-      
+      <Navbar cartAllProduct={cartAllProduct} />
+      <Routes>
+        <Route path="/" element={<Home setProductId={setProudctId} />}></Route>
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartAllProduct={cartAllProduct}
+              setCartAllProduct={setCartAllProduct}
+            />
+          }
+        ></Route>
+        <Route path="/success" element={<Success/>}></Route>
+      </Routes>
     </>
   );
 };
