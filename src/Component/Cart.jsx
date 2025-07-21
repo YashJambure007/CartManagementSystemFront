@@ -37,7 +37,7 @@ const Cart = ({ cartAllProduct, setCartAllProduct }) => {
 
   const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || "pk_test_51RmXF7Q7LO6b0ZmrJq87GutlVCx5aoMHVjLV95SGyIM2w0gwKEVhIwthDKMeJL8cVmgPKTwVMeTs2kwp56lvGrFT00oV3GfQav");
 
-  const response = await fetch("http://localhost:8000/api/makepayment", {
+  const response = await fetch("https://cartmanagementsystem.onrender.com/api/makepayment", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(cartAllProduct),
